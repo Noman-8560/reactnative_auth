@@ -22,6 +22,18 @@ const Login = () => {
     }
   };
 
+  const forgotPassword = () => {
+    firebase
+      .auth()
+      .sendPasswordResetEmail(email)
+      .then(() => {
+        alert("Password Reset Email Sent Sucessfully");
+      })
+      .catch((error) => {
+        alert(error);
+      });
+  };
+
   return (
     <View style={styles.container}>
       <Text style={{ fontWeight: "bold", fontSize: 26 }}>Login</Text>
@@ -43,11 +55,22 @@ const Login = () => {
           secureTextEntry={true}
         />
       </View>
+
       <TouchableOpacity
         onPress={() => LoginUser(email, password)}
         style={styles.button}
       >
         <Text style={{ fontWeight: "bold", fontSize: 22 }}>Login</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          forgotPassword();
+        }}
+        style={{ marginTop: 15 }}
+      >
+        <Text style={{ fontWeight: "bold", fontSize: 16 }}>
+          Forgot Password?
+        </Text>
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => navigation.navigate("Registration")}
@@ -79,13 +102,13 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     textAlign: "center",
   },
-  button:{
-    marginTop:50,
-    height:70,
-    width:250,
-    backgroundColor:'#026efd',
-    alignItems:'center',
-    justifyContent: 'center',
-    borderRadius:50,
-  }
+  button: {
+    marginTop: 50,
+    height: 70,
+    width: 250,
+    backgroundColor: "#026efd",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 50,
+  },
 });
