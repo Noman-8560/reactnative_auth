@@ -40,7 +40,7 @@ function App() {
               borderBottomLeftRadius: 50,
               borderBottomLeftRadius: 50,
               backgroundColor: "#00e4d0",
-              ShadowColor: "#000",
+              shadowColor: "#000",
               elevation: 25,
             },
           }}
@@ -56,7 +56,7 @@ function App() {
               borderBottomLeftRadius: 50,
               borderBottomLeftRadius: 50,
               backgroundColor: "#00e4d0",
-              ShadowColor: "#000",
+              shadowColor: "#000",
               elevation: 25,
             },
           }}
@@ -77,7 +77,7 @@ function App() {
             borderBottomLeftRadius: 50,
             borderBottomLeftRadius: 50,
             backgroundColor: "#00e4d0",
-            ShadowColor: "#000",
+            shadowColor: "#000",
             elevation: 25,
           },
         }}
